@@ -183,22 +183,98 @@ static void guiTask(void *pvParameter)
 
 int16_t read_joy_LY()
 {
-  // Add joystick data read function here
+  const int deadRangeLow = 1980 - 50;  // arbitrary range
+  const int deadRangeHigh = 1980 + 50; // arbitrary range
+  int value = analogRead(joyLX);
+  // Serial.println(value);
+  int Joystick_value;
+
+  if (value < deadRangeLow)
+  {
+    Joystick_value = map(value, 0, deadRangeLow, -1000, 0);
+    return Joystick_value;
+  }
+  else if (value > deadRangeHigh)
+  {
+    Joystick_value = map(value, deadRangeHigh, 4095, 0, 1000);
+    return Joystick_value;
+  }
+  else
+  {
+    return 0; // deadzone around center value
+  }
 }
 
 int16_t read_joy_LX()
 {
-  // Add joystick data read function here
+    const int deadRangeLow  = 1900 - 50;  // arbitrary range
+    const int deadRangeHigh = 1900 + 50; // arbitrary range
+    int value = analogRead(joyLY);
+    // Serial.println(value);
+    int Joystick_value;
+
+    if (value < deadRangeLow)
+    {
+      Joystick_value = map(value, 0, deadRangeLow, -1000, 0);
+      return Joystick_value;
+    }
+    else if (value > deadRangeHigh)
+    {
+      Joystick_value = map(value, deadRangeHigh, 4095, 0, 1000);
+      return Joystick_value;
+    }
+    else
+    {
+      return 0; // deadzone around center value
+    }
 }
 
 int16_t read_joy_RX()
 {
-  // Add joystick data read function here
+    const int deadRangeLow = 1810 - 50;  // arbitrary range
+    const int deadRangeHigh = 1810 + 50; // arbitrary range
+    int value = analogRead(joyRX);
+    // Serial.println(value);
+    int Joystick_value;
+
+    if (value < deadRangeLow)
+    {
+      Joystick_value = map(value, 0, deadRangeLow, -1000, 0);
+      return Joystick_value;
+    }
+    else if (value > deadRangeHigh)
+    {
+      Joystick_value = map(value, deadRangeHigh, 4095, 0, 1000);
+      return Joystick_value;
+    }
+    else
+    {
+      return 0; // deadzone around center value
+    }
 }
 
 int16_t read_joy_RY()
 {
-  // Add joystick data read function here
+    const int deadRangeLow = 1905 - 50;  // arbitrary range
+    const int deadRangeHigh = 1905 + 50; // arbitrary range
+    int value = analogRead(joyRY);
+    // Serial.println(value);
+    int Joystick_value;
+
+    if (value < deadRangeLow)
+    {
+      Joystick_value = map(value, 0, deadRangeLow, -1000, 0);
+      return Joystick_value;
+    }
+    else if (value > deadRangeHigh)
+    {
+      Joystick_value = map(value, deadRangeHigh, 4095, 0, 1000);
+      return Joystick_value;
+    }
+    else
+    {
+      return 0; // deadzone around center value
+    }
 }
 
 // Function for commanding the platform to move based on the position of the joysticks.
