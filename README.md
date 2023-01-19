@@ -2,9 +2,7 @@
 
 <h2 align="center">Remote controlled 4WD robot platform with omnidirectional wheels</h1>
 
-<p> Add image here </p>
-<img src ="" > 
-
+<img src ="images\omnigo.jpg"> 
 <h2> About </h2>
 
 ### Movement ###
