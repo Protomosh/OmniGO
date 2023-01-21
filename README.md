@@ -10,6 +10,8 @@ OmniGO is capable of moving in any direction thanks to its wheels that are equip
 
 Implemented controlling algorithm allows us to control its movement with 2 joystick in any direction with and without changing robots physical heading.
 
+https://user-images.githubusercontent.com/43253582/213877018-a9714144-cf83-44d8-a542-edbee256cc5a.mp4
+
 ### Wireless control ###
 
 For wireless control we are using ESP-NOW protocol that is developed by Espressif. It allows direct P2P communication between Esp32s without need of a access point.
